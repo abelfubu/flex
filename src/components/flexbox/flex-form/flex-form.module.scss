@@ -1,3 +1,5 @@
+@use "src/theme/index" as *;
+
 .form {
   padding: 1rem 2rem;
   border-radius: 0.5rem;
@@ -13,11 +15,11 @@
   }
 
   .title {
-    margin-bottom: 0.5rem;
-  }
-
-  .input-field {
-    padding: 0.2rem 0;
+    border: 3px dashed map-get($map: $primary, $key: 400);
+    padding: 4px;
+    margin-bottom: 0.2rem;
+    display: inline-block;
+    transform: translateX(-4px);
   }
 
   input[type='radio'] {

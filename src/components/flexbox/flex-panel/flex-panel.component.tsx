@@ -1,6 +1,6 @@
+import { FlexFormValues } from '@models/flex-form-values'
 import React, { useMemo } from 'react'
 
-import { FlexFormValues } from '../../../models'
 import classes from './flex-panel.module.scss'
 
 interface FlexPanelProps {
@@ -27,10 +27,9 @@ const FlexPanel = ({ formValues }: FlexPanelProps) => {
   const minHeight = useMemo(
     () => ({
       maxHeight: '800px',
-      minHeight:
-        formValues['flexDirection'] === 'column'
-          ? (formValues.items as number) * 175 + 'px'
-          : '200px',
+      minHeight: (formValues['flexDirection'] as string).includes('column')
+        ? (formValues.items as number) * 175 + 'px'
+        : '200px',
     }),
     [formValues],
   )

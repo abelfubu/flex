@@ -1,5 +1,5 @@
 import { CustomEvent } from 'models'
-import React, { useState } from 'react'
+import React from 'react'
 
 import classes from './radio-input.module.scss'
 
@@ -8,7 +8,7 @@ interface RadioInputProps {
   name: string
   value: string
   checked: boolean
-  onChange: ({ name, value }: CustomEvent) => CustomEvent
+  onChange: ({ name, value }: CustomEvent) => void
 }
 
 const RadioInput = ({ value, name, label, onChange, checked }: RadioInputProps) => (

@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useState } from 'react'
+import FlexForm from '@flexbox/flex-form/flex-form.component'
+import FlexPanel from '@flexbox/flex-panel/flex-panel.component'
+import { CustomEvent, FlexFormValues } from 'models'
+import React, { useState } from 'react'
 
-import FlexForm from '../../components/flexbox/flex-form/flex-form.component'
-import FlexPanel from '../../components/flexbox/flex-panel/flex-panel.component'
-import { CustomEvent, FlexFormValues } from '../../models'
 import classes from './flexbox.module.scss'
 
 const Flexbox = () => {

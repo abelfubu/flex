@@ -2,16 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import classes from './select.module.scss'
 
-interface ClickEvent extends MouseEvent {
-  path: any[]
-}
-
 interface SelectProps {
   options: string[] | number[]
   name: string
   value: string
   onChange: (event: any) => any
 }
+
 const Select = ({ options, value, name, onChange }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -23,12 +20,8 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const onOptionClick = (value: number) => {
-    setIsOpen(!isOpen)
+    setIsOpen(false)
     onChange({ name, value })
-  }
-
-  const handleClick = () => {
-    setIsOpen(!isOpen)
   }
 
   const handleClickOutside = (event: MouseEvent) => {
@@ -38,7 +31,7 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
   }
 
   return (
-    <div className={classes.select} onClick={handleClick} ref={dropdownRef}>
+    <div className={classes.select} onClick={() => setIsOpen(true)} ref={dropdownRef}>
       <span>{value}</span>
       <svg
         id='i-chevron-bottom'

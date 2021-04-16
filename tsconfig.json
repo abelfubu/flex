@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@UI/*": ["components/UI/*"],
-      "@styles/*": ["theme/*"]
+      "@flexbox/*": ["components/flexbox/*"]
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],

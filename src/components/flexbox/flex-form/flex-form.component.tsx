@@ -1,19 +1,18 @@
 import RadioInput from '@UI/radio-input/radio-input.component'
 import Select from '@UI/select/select.component'
-import React, { ChangeEvent } from 'react'
+import { CustomEvent, FlexFormValues } from 'models'
+import React, { useCallback } from 'react'
 
-import { FlexFormValues } from '../../../models'
 import classes from './flex-form.module.scss'
 
-const FlexForm = ({
-  onValueChange,
-  values,
-}: {
-  onValueChange: (event: any) => any
+interface FlexFormProps {
+  onValueChange: (event: CustomEvent) => void
   values: FlexFormValues
-}) => {
+}
+
+const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
   const formValues = [
-    { property: 'display', values: ['flex', 'block'] },
+    { property: 'flexDirection', values: ['row', 'row-reverse', 'column', 'column-reverse'] },
     {
       property: 'justifyContent',
       values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
@@ -22,18 +21,18 @@ const FlexForm = ({
       property: 'alignItems',
       values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
     },
-    { property: 'flexDirection', values: ['row', 'column'] },
+    { property: 'display', values: ['flex', 'block'] },
     { property: 'flexWrap', values: ['wrap', 'nowrap'] },
   ]
 
   const items = [...new Array(10)]
 
-  const capitalize = (value: string) => {
+  const capitalize = useCallback((value: string) => {
     return value
       .split('-')
       .map(word => word[0].toUpperCase() + word.substring(1))
       .join(' ')
-  }
+  }, [])
 
   return (
     <form className={classes.form}>
