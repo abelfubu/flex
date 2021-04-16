@@ -1,0 +1,67 @@
+@use "src/theme/index" as *;
+
+.input {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0;
+
+  span {
+    font-size: 0.8rem;
+  }
+}
+
+.radio {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px map-get($map: $dark, $key: 300), inset 0 0 0 2px #fff;
+  margin-right: 0.3rem;
+  overflow: hidden;
+  cursor: pointer;
+  transform: translateY(1px);
+
+  &:hover {
+    box-shadow: 0 0 0 2px map-get($map: $dark, $key: 300), inset 0 0 0 2px #fff,
+      0 0 5px 2px map-get($map: $primary, $key: 500);
+  }
+}
+
+.checked {
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 0 2px #fff;
+  border-radius: 50%;
+  opacity: 0.9;
+  background-color: map-get($map: $primary, $key: 500);
+}
+
+.in {
+  animation: in 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.out {
+  animation: out 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(0);
+}
+
+@keyframes in {
+  from {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+}

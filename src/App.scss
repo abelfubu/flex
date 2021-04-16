@@ -3,31 +3,3 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: white;
-  padding: 0 8vw;
-
-  ul {
-    display: flex;
-    list-style: none;
-  }
-
-  li {
-    padding: 0 0.5rem;
-  }
-
-  a {
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      color: #61dafb;
-    }
-  }
-}

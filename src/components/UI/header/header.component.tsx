@@ -1,8 +1,10 @@
 import React from 'react'
 
+import classes from './header.module.scss'
+
 const Header = () => {
   return (
-    <header className='App-header'>
+    <header className={classes.header}>
       <a href=''>LOGO</a>
       <nav>
         <ul>

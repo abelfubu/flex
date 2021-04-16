@@ -1,10 +1,10 @@
 import './App.scss'
 
+import Header from '@UI/header/header.component'
 import React, { useState } from 'react'
 import { HashRouter, Route } from 'react-router-dom'
 
-import Header from './components/header/Header'
-import Flexbox from './pages/flexbox/Flexbox'
+import Flexbox from './pages/flexbox/flexbox.component'
 
 function App() {
   return (

@@ -1,3 +1,5 @@
+import RadioInput from '@UI/radio-input/radio-input.component'
+import Select from '@UI/select/select.component'
 import React, { ChangeEvent } from 'react'
 
 import { FlexFormValues } from '../../../models'
@@ -7,7 +9,7 @@ const FlexForm = ({
   onValueChange,
   values,
 }: {
-  onValueChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
+  onValueChange: (event: any) => any
   values: FlexFormValues
 }) => {
   const formValues = [
@@ -24,7 +26,7 @@ const FlexForm = ({
     { property: 'flexWrap', values: ['wrap', 'nowrap'] },
   ]
 
-  const items = [...new Array(50)]
+  const items = [...new Array(10)]
 
   const capitalize = (value: string) => {
     return value
@@ -37,30 +39,27 @@ const FlexForm = ({
     <form className={classes.form}>
       {formValues.map((item, i) => (
         <div key={i}>
-          <p>{capitalize(item.property)}</p>
+          <p className={classes.title}>{capitalize(item.property)}</p>
           {item.values.map((input, i) => (
-            <div key={i} className={classes['input-field']}>
-              <input
-                type='radio'
-                name={item.property}
-                value={input}
-                onChange={onValueChange}
-                checked={input === values[item.property]}
-              />
-              <span>{capitalize(input)}</span>
-            </div>
+            <RadioInput
+              key={i}
+              name={item.property}
+              value={input}
+              label={capitalize(input)}
+              onChange={onValueChange}
+              checked={input === values[item.property]}
+            />
           ))}
         </div>
       ))}
       <div>
-        <p>Items</p>
-        <select name='items' onChange={onValueChange} value={values.items}>
-          {items.map((_, i) => (
-            <option key={i} value={i + 1}>
-              {i + 1}
-            </option>
-          ))}
-        </select>
+        <p className={classes.title}>Items</p>
+        <Select
+          value={values.items.toString()}
+          options={items}
+          name='items'
+          onChange={onValueChange}
+        />
       </div>
     </form>
   )
