@@ -1,5 +1,6 @@
-import React, { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import React, { ChangeEvent } from 'react'
 
+import { FlexFormValues } from '../../../models'
 import classes from './flex-form.module.scss'
 
 const FlexForm = ({
@@ -7,7 +8,7 @@ const FlexForm = ({
   values,
 }: {
   onValueChange: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void
-  values: any
+  values: FlexFormValues
 }) => {
   const formValues = [
     { property: 'display', values: ['flex', 'block'] },
@@ -20,9 +21,10 @@ const FlexForm = ({
       values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
     },
     { property: 'flexDirection', values: ['row', 'column'] },
+    { property: 'flexWrap', values: ['wrap', 'nowrap'] },
   ]
 
-  const items = [...new Array(10)]
+  const items = [...new Array(50)]
 
   const capitalize = (value: string) => {
     return value
@@ -37,7 +39,7 @@ const FlexForm = ({
         <div key={i}>
           <p>{capitalize(item.property)}</p>
           {item.values.map((input, i) => (
-            <div key={i}>
+            <div key={i} className={classes['input-field']}>
               <input
                 type='radio'
                 name={item.property}
