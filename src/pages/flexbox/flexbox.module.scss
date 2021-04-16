@@ -1,0 +1,18 @@
+.main {
+  padding: 2rem 8vw;
+
+  h1 {
+    padding-bottom: 1rem;
+  }
+
+  div {
+    transition: all 1s ease;
+  }
+}
+
+.flex-item {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  place-content: center;
+}

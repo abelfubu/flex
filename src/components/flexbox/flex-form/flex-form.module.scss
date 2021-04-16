@@ -1,0 +1,30 @@
+.form {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 11px 1px #23232350;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+
+  div:nth-child(2),
+  div:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  input[type='radio'] {
+    margin-right: 0.5rem;
+    transform: scale(1.5);
+    background-color: blue;
+  }
+
+  select {
+    width: 80%;
+    border-radius: 8px;
+    padding: 0.5rem;
+  }
+}
