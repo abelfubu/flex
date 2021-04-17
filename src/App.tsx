@@ -2,17 +2,17 @@ import './App.scss'
 
 import Header from '@UI/header/header.component'
 import React, { useState } from 'react'
-import { HashRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import Flexbox from './pages/flexbox/flexbox.component'
 
 function App() {
   return (
     <div className='App'>
-      <HashRouter>
+      <BrowserRouter basename='/flex'>
         <Header />
-        <Route exact path='/' component={Flexbox} />
-      </HashRouter>
+        <Route exact path='' component={Flexbox} />
+      </BrowserRouter>
     </div>
   )
 }

@@ -21,6 +21,10 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
       property: 'alignItems',
       values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
     },
+    {
+      property: 'alignContent',
+      values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
+    },
     { property: 'display', values: ['flex', 'block'] },
     { property: 'flexWrap', values: ['wrap', 'nowrap'] },
   ]

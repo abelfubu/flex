@@ -1,3 +1,4 @@
+import logo from 'favicon.svg'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -6,11 +7,13 @@ import classes from './header.module.scss'
 const Header = () => {
   return (
     <header className={classes.header}>
-      <a href=''>LOGO</a>
+      <Link to=''>
+        <img src={logo} alt='Logo' />
+      </Link>
       <nav>
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link to=''>Flexbox</Link>
           </li>
           <li>
             <Link to='/about'>About</Link>

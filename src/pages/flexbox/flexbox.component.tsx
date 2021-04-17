@@ -10,6 +10,7 @@ const Flexbox = () => {
     display: 'flex',
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
+    alignContent: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'nowrap',
     items: 3,
