@@ -48,7 +48,7 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
       </svg>
       {isOpen && (
         <div className={classes.dropdown}>
-          {options.map((option, i) => (
+          {options.map((option: number | string, i: number) => (
             <p key={i} onClick={() => onOptionClick(option)}>
               {option}
             </p>
