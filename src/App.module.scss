@@ -8,4 +8,15 @@
   // filter: contrast(1.3);
   min-height: 100vh;
   color: #ffffffaa;
+
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: map-get(c.$dark, 500);
+    background: map-get(c.$primary, 500);
+  }
+
+  ::selection {
+    color: map-get(c.$dark, 500);
+    background: map-get(c.$primary, 500);
+  }
 }

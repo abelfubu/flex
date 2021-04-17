@@ -1,0 +1,44 @@
+@use "src/theme/index" as *;
+
+.social {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  list-style: none;
+  height: 200px;
+  @include flex(space-between, column);
+
+  &:after {
+    content: '';
+    height: 100px;
+    width: 2px;
+    background-color: transparentize(map-get($primary, 400), 0.5);
+  }
+}
+
+.span {
+  writing-mode: vertical-lr;
+  position: absolute;
+  bottom: 1rem;
+  left: 0.5rem;
+  // transform: translateY(-50%);
+  font-size: 13px;
+}
+
+@media (max-width: 1100px) {
+  .social {
+    @include flex(center, row);
+    position: static;
+    height: 2rem;
+    width: 100%;
+    padding-bottom: 2rem;
+
+    &:after {
+      display: none;
+    }
+
+    li {
+      padding: 0 0.5rem;
+    }
+  }
+}

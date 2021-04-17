@@ -43,6 +43,15 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
 
   return (
     <form className={classes.form}>
+      <div>
+        <p className={classes.title}>Items</p>
+        <Select
+          value={values.items.toString()}
+          options={items.map((_, i) => i + 1)}
+          name='items'
+          onChange={onValueChange}
+        />
+      </div>
       {selectInputs.map((item, i) => (
         <div key={i}>
           <p className={classes.title}>{capitalize(item.property)}</p>
@@ -80,15 +89,6 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
           min='0'
           max='100'
           onChange={event => onValueChange({ name: event.target.name, value: event.target.value })}
-        />
-      </div>
-      <div>
-        <p className={classes.title}>Items</p>
-        <Select
-          value={values.items.toString()}
-          options={items.map((_, i) => i + 1)}
-          name='items'
-          onChange={onValueChange}
         />
       </div>
     </form>

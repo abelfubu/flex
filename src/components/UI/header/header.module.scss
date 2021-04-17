@@ -20,13 +20,45 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    position: relative;
 
     &:hover {
       color: map-get($map: $primary, $key: 400);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+      width: 120%;
+      height: 1.5rem;
+      border: 2px dashed map-get($primary, 500);
+      left: 50%;
+      top: 50%;
+      background-color: transparentize(map-get($primary, 500), $amount: 0.8);
+    }
+
+    &:hover:after {
+      animation: fadein 1s;
+      transform: translate(-50%, -50%) rotate(0) scaleX(1);
     }
   }
 
   img {
     margin-right: 0.15rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
+    width: 1.5rem;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0) scaleX(1);
+    width: 1.5rem;
+  }
+  to {
+    width: 120%;
   }
 }

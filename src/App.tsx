@@ -1,4 +1,5 @@
 import Header from '@UI/header/header.component'
+import Social from 'components/social/social.component'
 import Flexbox from 'pages/flexbox/flexbox.component'
 import Grid from 'pages/grid/grid.component'
 import React, { useState } from 'react'
@@ -14,6 +15,7 @@ const App = () => (
         <Route exact path='/' component={Flexbox} />
         <Route path='/grid' component={Grid} />
       </Switch>
+      <Social />
     </BrowserRouter>
   </div>
 )

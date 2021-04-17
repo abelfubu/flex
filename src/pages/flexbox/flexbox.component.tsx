@@ -1,5 +1,6 @@
 import FlexForm from '@flexbox/flex-form/flex-form.component'
 import FlexPanel from '@flexbox/flex-panel/flex-panel.component'
+import Title from '@UI/title/title.component'
 import { CustomEvent, FlexFormValues } from 'models'
 import React, { useState } from 'react'
 
@@ -25,7 +26,7 @@ const Flexbox = () => {
 
   return (
     <div className={classes.main}>
-      <h1 className={classes.title}>FlexBox</h1>
+      <Title text='Flexbox' />
       <FlexForm onValueChange={handleFormChange} values={formValues} />
       <FlexPanel formValues={formValues} />
     </div>
