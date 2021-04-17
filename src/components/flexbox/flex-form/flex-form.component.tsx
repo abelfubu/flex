@@ -59,7 +59,7 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
         <p className={classes.title}>Items</p>
         <Select
           value={values.items.toString()}
-          options={items}
+          options={items.map((_, i) => i + 1)}
           name='items'
           onChange={onValueChange}
         />

@@ -19,7 +19,7 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
 
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const onOptionClick = (value: number) => {
+  const onOptionClick = (value: number | string) => {
     setIsOpen(false)
     onChange({ name, value })
   }
@@ -48,9 +48,9 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
       </svg>
       {isOpen && (
         <div className={classes.dropdown}>
-          {options.map((_, i) => (
-            <p key={i} onClick={() => onOptionClick(i + 1)}>
-              {i + 1}
+          {options.map((option, i) => (
+            <p key={i} onClick={() => onOptionClick(option)}>
+              {option}
             </p>
           ))}
         </div>
