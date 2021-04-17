@@ -1,0 +1,11 @@
+@use "colors" as *;
+
+i {
+  color: map-get($dark, 300);
+  cursor: pointer;
+  transform: translateY(2px);
+
+  &:hover {
+    color: map-get($primary, 400);
+  }
+}

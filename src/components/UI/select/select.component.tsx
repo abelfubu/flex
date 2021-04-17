@@ -5,7 +5,7 @@ import classes from './select.module.scss'
 interface SelectProps {
   options: string[] | number[]
   name: string
-  value: string
+  value: string | number
   onChange: (event: any) => any
 }
 
@@ -19,7 +19,8 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
 
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const onOptionClick = (value: number | string) => {
+  const onOptionClick = (event: React.MouseEvent, value: number | string) => {
+    event.stopPropagation()
     setIsOpen(false)
     onChange({ name, value })
   }
@@ -49,7 +50,10 @@ const Select = ({ options, value, name, onChange }: SelectProps) => {
       {isOpen && (
         <div className={classes.dropdown}>
           {options.map((option: number | string, i: number) => (
-            <p key={i} onClick={() => onOptionClick(option)}>
+            <p
+              key={i}
+              onClick={event => onOptionClick(event, option)}
+              className={option.toString() === value ? classes.selected : ''}>
               {option}
             </p>
           ))}

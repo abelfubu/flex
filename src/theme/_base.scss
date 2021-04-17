@@ -1,3 +1,5 @@
+@use "colors" as *;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,4 +9,10 @@
   scroll-behavior: smooth;
   font-family: 'Inconsolata', monospace;
   font-size: 21px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }

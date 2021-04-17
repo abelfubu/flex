@@ -7,31 +7,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 0.5fr;
+  border: 1px solid map-get($map: $dark, $key: 300);
   gap: 1rem;
 
-  // div:nth-child(2),
-  // div:nth-child(3),
-  // div:nth-child(4) {
-  //   grid-row: span 2;
-  // }
-
   .title {
-    border: 3px dashed map-get($map: $primary, $key: 400);
-    padding: 4px;
+    border-bottom: 3px dashed map-get($map: $primary, $key: 500);
     margin-bottom: 0.2rem;
     display: inline-block;
-    transform: translateX(-4px);
   }
 
-  input[type='radio'] {
-    margin-right: 0.5rem;
-    transform: scale(1.5);
-    background-color: blue;
-  }
-
-  select {
-    width: 80%;
-    border-radius: 8px;
-    padding: 0.5rem;
+  .range {
+    margin-top: 0.8rem;
+    width: 100%;
   }
 }

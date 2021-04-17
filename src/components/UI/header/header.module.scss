@@ -1,7 +1,6 @@
 @use 'src/theme/index' as *;
 
 .header {
-  background-color: #282c34;
   height: 64px;
   @include flex;
   color: white;
@@ -19,9 +18,15 @@
   a {
     color: #fff;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 
     &:hover {
       color: map-get($map: $primary, $key: 400);
     }
+  }
+
+  img {
+    margin-right: 0.15rem;
   }
 }

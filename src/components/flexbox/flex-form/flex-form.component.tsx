@@ -11,7 +11,7 @@ interface FlexFormProps {
 }
 
 const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
-  const formValues = [
+  const selectInputs = [
     { property: 'flexDirection', values: ['row', 'row-reverse', 'column', 'column-reverse'] },
     {
       property: 'justifyContent',
@@ -25,6 +25,9 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
       property: 'alignContent',
       values: ['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly'],
     },
+  ]
+
+  const radioInputs = [
     { property: 'display', values: ['flex', 'block'] },
     { property: 'flexWrap', values: ['wrap', 'nowrap'] },
   ]
@@ -40,7 +43,19 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
 
   return (
     <form className={classes.form}>
-      {formValues.map((item, i) => (
+      {selectInputs.map((item, i) => (
+        <div key={i}>
+          <p className={classes.title}>{capitalize(item.property)}</p>
+          <Select
+            key={i}
+            name={item.property}
+            value={values[item.property]}
+            onChange={onValueChange}
+            options={item.values}
+          />
+        </div>
+      ))}
+      {radioInputs.map((item, i) => (
         <div key={i}>
           <p className={classes.title}>{capitalize(item.property)}</p>
           {item.values.map((input, i) => (
@@ -55,6 +70,18 @@ const FlexForm = ({ onValueChange, values }: FlexFormProps) => {
           ))}
         </div>
       ))}
+      <div>
+        <p className={classes.title}>Flex Basis</p>
+        <input
+          className={classes.range}
+          type='range'
+          name='flexBasis'
+          value={values.flexBasis}
+          min='0'
+          max='100'
+          onChange={event => onValueChange({ name: event.target.name, value: event.target.value })}
+        />
+      </div>
       <div>
         <p className={classes.title}>Items</p>
         <Select

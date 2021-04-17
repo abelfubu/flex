@@ -13,6 +13,7 @@ const Flexbox = () => {
     alignContent: 'flex-start',
     flexDirection: 'row',
     flexWrap: 'nowrap',
+    flexBasis: '0',
     items: 3,
   }
 
@@ -24,7 +25,7 @@ const Flexbox = () => {
 
   return (
     <div className={classes.main}>
-      <h1>FlexBox</h1>
+      <h1 className={classes.title}>FlexBox</h1>
       <FlexForm onValueChange={handleFormChange} values={formValues} />
       <FlexPanel formValues={formValues} />
     </div>
