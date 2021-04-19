@@ -39,7 +39,7 @@
     }
 
     &:hover:after {
-      animation: fadein 1s;
+      animation: fadein 0.4s;
       transform: translate(-50%, -50%) rotate(0) scaleX(1);
     }
   }
@@ -49,16 +49,17 @@
   }
 }
 
+.primary {
+  color: map-get($primary, 500);
+}
+
 @keyframes fadein {
   from {
     transform: translate(-50%, -50%) rotate(90deg) scaleX(0);
     width: 1.5rem;
   }
-  50% {
-    transform: translate(-50%, -50%) rotate(0) scaleX(1);
-    width: 1.5rem;
-  }
   to {
+    transform: translate(-50%, -50%) rotate(0) scaleX(1);
     width: 120%;
   }
 }

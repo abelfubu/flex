@@ -1,8 +1,8 @@
+import Flexbox from '@pages/flexbox/flexbox.component'
+import Grid from '@pages/grid/grid.component'
 import Header from '@UI/header/header.component'
-import Social from 'components/social/social.component'
-import Flexbox from 'pages/flexbox/flexbox.component'
-import Grid from 'pages/grid/grid.component'
-import React, { useState } from 'react'
+import Social from '@UI/social/social.component'
+import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import classes from './App.module.scss'

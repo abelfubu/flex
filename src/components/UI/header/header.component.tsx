@@ -14,10 +14,14 @@ const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to=''>Flexbox</Link>
+            <Link to=''>
+              <span className={classes.primary}>01.</span>Flexbox
+            </Link>
           </li>
           <li>
-            <Link to='/grid'>Grid</Link>
+            <Link to='/grid'>
+              <span className={classes.primary}>02.</span>Grid
+            </Link>
           </li>
         </ul>
       </nav>
